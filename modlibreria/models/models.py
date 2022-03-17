@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-from sklearn import datasets, joblib
+from sklearn import datasets
+import joblib
 
 class modlibreria(models.Model):
     _name = 'modlibreria.modlibreria'
@@ -15,6 +16,7 @@ class modlibreria(models.Model):
     @api.depends('value')
     def predecir(self):
         clf=joblib.load('modelo_entrenado.pkl')
+        joblib.load()
         iris=datasets.load_iris()
         result=clf.score(iris.data, iris.target)
         for record in self:
