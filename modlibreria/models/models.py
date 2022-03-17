@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-from sklearn import datasets
-from sklearn.externals import joblib
+from sklearn import datasets, joblib
 
 class modlibreria(models.Model):
     _name = 'modlibreria.modlibreria'
