@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
-# from odoo import models, fields, api
+from odoo import models, fields, api
 
 
-# class modlibreria(models.Model):
-#     _name = 'modlibreria.modlibreria'
-#     _description = 'modlibreria.modlibreria'
+class modlibreria(models.Model):
+    _name = 'modlibreria.modlibreria'
+    _description = 'modlibreria.modlibreria'
 
 #     name = fields.Char()
 #     value = fields.Integer()
