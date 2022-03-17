@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import http
+from odoo.http import request
 from sklearn import datasets
 
 class Modlibreria(http.Controller):
@@ -7,8 +8,10 @@ class Modlibreria(http.Controller):
     def index(self, **kw):
         datasets.load_iris()
         digits = datasets.load_digits()
-        print(digits.data)
-        return "Hello instalar librerias"
+        dato=digits.data
+        return http.request.render('modlibrerira.prueba', {
+            'dato': dato
+        })
 
 #     @http.route('/modlibreria/modlibreria/objects', auth='public')
 #     def list(self, **kw):
