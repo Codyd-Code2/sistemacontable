@@ -15,7 +15,7 @@ class modlibreria(models.Model):
 
     @api.depends('value')
     def predecir(self):
-        clf=joblib.load('../modelo_entrenado.pkl')
+        clf=joblib.load('modelo_entrenado.pkl')
         iris=datasets.load_iris()
         result=clf.score(iris.data, iris.target)
         for record in self:
