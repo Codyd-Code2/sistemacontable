@@ -9,11 +9,13 @@ class modlibreria(models.Model):
 
     name = fields.Char()
     value = fields.Integer()
-    value2 = fields.Float(compute="_value_pc", store=True)
+    value2 = fields.Integer(compute="_value_pc", store=True)
 
+    @api.depends('value')
     def _value_pc(self):
         datasets.load_iris()
         digits = datasets.load_digits()
         dato=digits.data.argmax()
+
         for record in self:
-            record.value2 = dato
+            record.value2 = record.value + dato
