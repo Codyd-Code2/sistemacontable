@@ -4,7 +4,7 @@ from odoo import http
 class Modlibreria(http.Controller):
     @http.route('/modlibreria/modlibreria', auth='public')
     def index(self, **kw):
-        return "Hello Juan"
+        return "Hello instalar librerias"
 
 #     @http.route('/modlibreria/modlibreria/objects', auth='public')
 #     def list(self, **kw):
