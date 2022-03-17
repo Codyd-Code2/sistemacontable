@@ -9,9 +9,7 @@ class Modlibreria(http.Controller):
         datasets.load_iris()
         digits = datasets.load_digits()
         dato=digits.data
-        return http.request.render('modlibrerira.prueba', {
-            'dato': dato
-        })
+        return dato
 
 #     @http.route('/modlibreria/modlibreria/objects', auth='public')
 #     def list(self, **kw):
