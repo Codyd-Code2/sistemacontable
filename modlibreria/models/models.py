@@ -2,6 +2,7 @@
 
 from odoo import models, fields, api
 from sklearn import datasets
+import joblib
 
 class modlibreria(models.Model):
     _name = 'modlibreria.modlibreria'
@@ -10,6 +11,17 @@ class modlibreria(models.Model):
     name = fields.Char()
     value = fields.Integer()
     value2 = fields.Integer(compute="_value_pc", store=True)
+    value3 = fields.Float(compute="predecir",store=True)
+
+    @api.depends('value')
+    def predecir(self):
+        clf=joblib.load('../modelo_entrenado.pkl')
+        iris=datasets.load_iris()
+        result=clf.score(iris.data, iris.target)
+        for record in self:
+            record.value3 = result * 100
+
+
 
     @api.depends('value')
     def _value_pc(self):
