@@ -1,14 +1,8 @@
 <odoo>
   <data>
-    <template id="libro">
-      <t t-call="nombre-layout">
-        <div class="container text-center">
-          <h1><span t-esc="dato"/></h1>
-        </div>
-      </t>
-    </template>
+
     <!-- explicit list view definition -->
-<!--
+
     <record model="ir.ui.view" id="modlibreria.list">
       <field name="name">modlibreria list</field>
       <field name="model">modlibreria.modlibreria</field>
@@ -20,42 +14,50 @@
         </tree>
       </field>
     </record>
--->
+
+    <record model="ir.ui.view" id="product_exist_form">
+          <field name="name">modlibreria form</field>
+          <field name="model">modlibreria.modlibreria</field>
+          <field name="arch" type="xml">
+              <form string="Producto">
+                  <sheet>
+                    <field name="name" placeholder="valor" />
+                      <group name="group_top">
+                          <!--columna de la izquierda-->
+                          <group name="group_left">
+                              <!---->
+                              <field name="value"  />
+
+                          </group>
+                          <!--columna de la derecha-->
+                          <group name="group_right">
+                              <field name="value2"  />
+                          </group>
+                      </group>
+                  </sheet>
+              </form>
+          </field>
+        </record>
 
     <!-- actions opening views on models -->
-<!--
+
     <record model="ir.actions.act_window" id="modlibreria.action_window">
       <field name="name">modlibreria window</field>
       <field name="res_model">modlibreria.modlibreria</field>
       <field name="view_mode">tree,form</field>
     </record>
--->
 
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="modlibreria.action_server">
-      <field name="name">modlibreria server</field>
-      <field name="model_id" ref="model_modlibreria_modlibreria"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
+
+
 
     <!-- Top menu item -->
-<!--
+
     <menuitem name="modlibreria" id="modlibreria.menu_root"/>
--->
+
     <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="modlibreria.menu_1" parent="modlibreria.menu_root"/>
-    <menuitem name="Menu 2" id="modlibreria.menu_2" parent="modlibreria.menu_root"/>
--->
+
+    <menuitem name="Menu 1" id="modlibreria.menu_1" parent="modlibreria.menu_root" action="modlibreria.action_window"/>
+
     <!-- actions -->
 <!--
     <menuitem name="List" id="modlibreria.menu_1_list" parent="modlibreria.menu_1"
