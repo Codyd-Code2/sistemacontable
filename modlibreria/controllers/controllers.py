@@ -1,13 +1,16 @@
 # -*- coding: utf-8 -*-
 from odoo import http
 from odoo.http import request
-
+from sklearn import datasets
 
 class Modlibreria(http.Controller):
-    @http.route('/modlibreria/<model("modlibreria.modlibreria"):libro', auth='public')
-    def index(self, libro):
+    @http.route('/modlibreria', auth='public')
+    def index(self, **kw):
+        datasets.load_iris()
+        digits = datasets.load_digits()
+        dato = digits.data.argmax()
         return http.request.render('modlibreria.libro' , {
-            'libro': libro
+            'dato': dato
         })
 
 #     @http.route('/modlibreria/modlibreria/objects', auth='public')

@@ -3,7 +3,7 @@
     <template id="libro">
       <t t-call="nombre-layout">
         <div class="container text-center">
-          <h1><span t-esc="libro.value2"/></h1>
+          <h1><span t-esc="dato"/></h1>
         </div>
       </t>
     </template>
