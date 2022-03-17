@@ -1,13 +1,13 @@
 <odoo>
   <data>
-   <!-- <template id="dato">
+    <template id="dato">
       <t t-call="nombre-layout">
         <div class="container text-center">
           <h1><span t-esc="dato"/></h1>
         </div>
       </t>
     </template>
-     explicit list view definition -->
+    <!-- explicit list view definition -->
 <!--
     <record model="ir.ui.view" id="modlibreria.list">
       <field name="name">modlibreria list</field>
