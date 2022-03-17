@@ -6,9 +6,10 @@ from sklearn import datasets
 class Modlibreria(http.Controller):
     @http.route('/modlibreria', auth='public')
     def index(self, **kw):
-        datasets.load_iris()
-        digits = datasets.load_digits()
-        dato = digits.data.argmax()
+        """datasets.load_iris()
+        digits = datasets.load_digits()"""
+        dato = 'holamundo'
+        #digits.data.argmax()
         return http.request.render('modlibreria.libro' , {
             'dato': dato
         })
