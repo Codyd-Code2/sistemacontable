@@ -53,7 +53,7 @@
 
     <!-- Top menu item -->
 
-    <menuitem name="modlibreria" id="modlibreria.menu_root"/>
+    <menuitem name="modlibreria" id="modlibreria.menu_root" web_icon="modlibreria,static/src/img/icon.png" />
 
     <!-- menu categories -->
 

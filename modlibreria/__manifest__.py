@@ -34,8 +34,5 @@
         'demo/demo.xml',
     ],
 
-    'external_dependencies' : {
-        'images': ['modlibreria/static/src/img/icon.png']
 
-    }
 }
